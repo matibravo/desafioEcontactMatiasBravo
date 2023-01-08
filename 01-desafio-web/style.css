@@ -1,0 +1,229 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    font-family: serif;
+    text-align: center;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+
+img{
+	width: 100%;
+    border-radius: 0.5rem;
+}
+
+p {
+    color: black;
+}
+
+.encabezado{
+    /*text-align: center;*/
+    background-color: rgb(33, 111, 177);
+    color: white;
+    padding: 1.5rem;
+    text-shadow: 4px 4px 4px black ;
+}
+
+.encabezadoDos{
+    background-color: rgb(44, 153, 163);
+    color: white;
+    padding: 2rem 10rem;
+    line-height: 2rem;        
+}
+
+.encabezadoDos span {
+    font-weight: bolder;    
+}
+
+.subtitulo {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.subrayar {
+    text-decoration: underline;
+}
+
+.seccion {
+    display: grid;
+    grid-template-columns: 50% 1fr;
+    gap: 30px;
+    margin-top: 4rem;
+    margin-left: 8rem;
+    margin-right: 8rem;
+    margin-bottom: 2rem;
+}
+
+.seccion div h3 {
+    background-color: rgb(57, 57, 59);
+    color: white; 
+    border-radius: 4px;
+    padding: 0.2rem 2rem; 
+    margin-bottom: 2rem; 
+}
+
+.seccion div p {
+    line-height: 2rem;
+}
+
+section h3 {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+    color: rgb(33, 111, 177);
+}
+
+section p {
+    color: rgb(57, 57, 59);
+    margin-bottom: 2rem;
+}
+
+.seccionTarjeta {
+    display: grid;
+    grid-template-columns: 28% 28% 28%;
+    gap: 6rem;
+    margin-top: 4rem;
+    margin-left: 8rem;
+    margin-right: 8rem;
+    margin-bottom: 2rem;
+}
+
+.tarjeta {
+    background-color: rgb(33, 111, 177);
+    border-radius: 1rem;
+    color: white;
+    padding: 2rem 1rem;
+}
+
+.tarjeta h4 {
+    margin-bottom: 2rem;
+}
+
+.tarjeta p{
+    color: white;
+}
+
+.tarjeta a {
+    font-weight: bolder;
+    background-color: white;
+    color: rgb(33, 111, 177);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    text-decoration: none;
+}
+
+.contactar {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    background-color: rgb(44, 153, 163);
+    padding-bottom: 2rem;
+}
+
+.contactar h3 {
+    padding-top: 2rem;
+    color: white;
+}
+
+.contactar a {
+    font-weight: bolder;
+    background-color: white;
+    color: rgb(33, 111, 177);
+    border-radius: 0.3rem;
+    margin: 0.2rem;
+    padding: 0.5rem;
+    text-decoration: none;
+}
+
+.contactanos {    
+    display: grid;
+    grid-template-columns: 28% 28% 28%;
+    gap: 6rem;
+    background-color: rgb(33, 111, 177);
+    color: white;
+    padding-left: 8rem;
+    padding-right: 8rem;   
+    padding-bottom: 2rem; 
+}
+
+.logo {
+    padding: 2rem;
+}
+
+.numeros h3 {
+    margin-top: 0px;
+    padding-top: 2rem;
+    color: white;
+}
+
+.redes {
+    display: grid;
+    grid-template-columns: 28% 28% 28%;
+    gap: 10px;    
+    padding: 4rem 5rem;
+}
+
+footer {
+    background-color: gray;       
+}
+
+footer a {
+    padding: 0.5rem;
+    color: white;
+    text-decoration: none;    
+}
+
+@media screen and (max-width: 600px) {
+
+    .seccion {
+      display: grid;
+      grid-template-columns: 90%;
+    }
+
+    .seccionTarjeta {
+        display: grid;
+        grid-template-columns: 90%;
+    }   
+
+    .contactanos {
+        display: grid;
+        grid-template-columns: 90%;
+      }
+    
+  }
+
+  @media screen and (max-width: 450px) {
+
+    .encabezadoDos {
+        padding: 1rem;
+    }
+
+    .seccion {   
+        margin: 1rem;     
+        padding-left: 1.5rem;     
+      
+    }
+
+    section p {
+        padding: 1rem;
+    }
+
+    .seccionTarjeta {
+        margin: 1rem;     
+        padding-left: 1.5rem; 
+    }   
+
+    .contactanos {  
+        padding-top: 0px;
+        padding-right: 0px;  
+        padding-bottom: 0px;    
+        padding-left: 1.5rem;
+    }
+
+    .redes {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+    }      
+  }
