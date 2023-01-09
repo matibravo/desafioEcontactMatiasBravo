@@ -118,7 +118,7 @@ function obtenerCantidadDePares(numero1, numero2) {
 
     for (let i = numero1; i <= numero2; i++) {
       
-      if (i % 2 == 0) {
+      if (i % 2 === 0) {
         contador++;
       }
       
@@ -187,7 +187,7 @@ function obtenerPaisesConTelefono(econtact = {}) {
 
 }
 
-obtenerPaisesConTelefono(objetoFijo);
+//obtenerPaisesConTelefono(objetoFijo);
 //! =======================================================================================================================================================
 
 /**
@@ -201,7 +201,40 @@ obtenerPaisesConTelefono(objetoFijo);
  *? En caso contrario, retornar un string con la frase "La operación matemática que intenta realizar es inexistente"
  */
 
-function calculoMatematico(operacion, numero1, numero2) {}
+function calculoMatematico(operacion, numero1, numero2) {
+  let resultado = 0;
+
+  if (typeof operacion === 'string' && typeof numero1 === 'number' && typeof numero2 === 'number') {
+    
+    switch (operacion) {
+      case '+':
+        resultado = numero1 + numero2;   
+        console.log(`El resultado de ${numero1} ${operacion} ${numero2} = ${resultado}`);     
+        break;
+      case '-':
+        resultado = numero1 - numero2;  
+        console.log(`El resultado de ${numero1} ${operacion} ${numero2} = ${resultado}`);      
+        break;
+      case '*':
+        resultado = numero1 * numero2;  
+        console.log(`El resultado de ${numero1} ${operacion} ${numero2} = ${resultado}`);      
+        break;
+      case '/':
+        resultado = numero1 / numero2;      
+        console.log(`El resultado de ${numero1} ${operacion} ${numero2} = ${resultado}`);  
+        break;  
+      default:
+        console.log('La operación matemática que intenta realizar es inexistente');
+        break;
+    }    
+
+  } else {
+    console.log('Los valores ingresados son inválidos.');
+  }
+
+}
+
+//calculoMatematico("-*",8,1);
 //! =======================================================================================================================================================
 
 /**
@@ -211,7 +244,26 @@ function calculoMatematico(operacion, numero1, numero2) {}
  *? Ayuda: usar ciclo while y recordar el método "push" para ir agregando valores al arreglo
  */
 
-function cargarArreglo(numero) {}
+function cargarArreglo(numero) {
+  const arreglo = [];
+  const dobleNumero = numero * 2;
+  
+  if (numero > 0) {
+    
+    while (numero <= dobleNumero) {
+      arreglo.push(numero);
+      numero++;  
+      
+    }
+    
+    console.log(arreglo);
+    
+  } else {
+    console.log('El número ingresado debe ser mayor a 0');
+  }
+}
+
+//cargarArreglo(100);
 //! =======================================================================================================================================================
 
 /**
@@ -220,7 +272,19 @@ function cargarArreglo(numero) {}
  *?  Ayuda: Usar el operador módulo (o resto) "%"
  */
 
-function divisiblesPorCinco(numeros = []) {}
+function divisiblesPorCinco(numeros = []) {
+  let contador = 0;
+
+  numeros.forEach(element => {
+    if (element % 5 === 0) {
+      contador++;
+    }
+  });
+
+  console.log(`la cantidad de numeros divisibles por 5 es: ${contador}`);
+}
+
+//divisiblesPorCinco([4,5,6,10,110,20,150,1]);
 //! =======================================================================================================================================================
 
 /**
@@ -229,7 +293,18 @@ function divisiblesPorCinco(numeros = []) {}
  *?
  */
 
-function sumatoria(numeros = []) {}
+function sumatoria(numeros = []) {
+  let suma = 0;
+
+  numeros.forEach(element => {
+    if (typeof element === 'number') {
+      suma += element;
+    }     
+  });
+  console.log(`La suma es: ${suma}`);
+}
+
+//sumatoria([2,4,5,3,7]);
 //! =======================================================================================================================================================
 
 /**
@@ -238,7 +313,24 @@ function sumatoria(numeros = []) {}
  *? La función debe retornar True si son iguales, o False en caso de no ser iguales
  */
 
-function verificarCantidadEmpleados(econtact = {}) {}
+function verificarCantidadEmpleados1(econtact = {}) {
+  const empleadoEcontact = econtact.datos.empleados;
+  const sedes = econtact.datos.sedes;
+  let sumatoria = 0;
+
+  for (const key in sedes) {
+    let empleados = sedes[key].empleados;
+    sumatoria += empleados;        
+ }
+ 
+ return (empleadoEcontact === sumatoria) ? true : false;
+ 
+}
+
+//console.log(verificarCantidadEmpleados1(objetoFijo));
+
+
+
 //! =======================================================================================================================================================
 
 /**
@@ -250,7 +342,17 @@ function verificarCantidadEmpleados(econtact = {}) {}
  *? console.log(Math.pow(5, 2))
  */
 
-function calcularCuadrados(arreglo = []) {}
+function calcularCuadrados(arreglo = []) {
+  const arregloCuadrado = [];
+  
+  arreglo.forEach(element => {
+    arregloCuadrado.push(Math.pow(element, 2));
+  });
+
+  console.log(arregloCuadrado);
+}
+
+//calcularCuadrados(arregloFijo);
 //! =======================================================================================================================================================
 
 /**
@@ -260,7 +362,23 @@ function calcularCuadrados(arreglo = []) {}
  *? Validar al inicio de la función que el arreglo cuente con la condición establecida. Si no cumple la misma, retornar False
  */
 
-function validarArreglo(numeros = []) {}
+function validarArreglo(numeros = []) {
+  let sumatoria = 0;
+
+  if (numeros.length >= 6) {
+    
+    for (const valor of numeros) {
+      sumatoria += valor;      
+    }
+
+    return (sumatoria > 100) ? true : false;    
+
+  } else {
+    return false;
+  }
+}
+
+//console.log(validarArreglo([1,2,3,100,3,4,5,6])); 
 //! =======================================================================================================================================================
 
 /**
