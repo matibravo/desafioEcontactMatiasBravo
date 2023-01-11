@@ -387,14 +387,46 @@ function validarArreglo(numeros = []) {
  *? Recordar que Javascript es "Case Sensitive", es decir, distingue entre mayúsculas y minúsculas.
  */
 
-function validarNombre(nombres = [], nombre) {}
+function validarNombre(nombres = [], nombre) {
+  
+  const nombreMayuscula = nombre.toUpperCase();
+  const arregloMayusculas = [];
+  let resultado = false;
+  
+  for (const valor of nombres) {
+    arregloMayusculas.push(valor.toUpperCase());    
+  }
+
+  for (const valor of arregloMayusculas) {
+
+    if (valor === nombreMayuscula) {
+      resultado = true;
+    }
+       
+  }
+
+  return resultado;
+}
+
+//console.log(validarNombre(['matias','alonso','tomas','CAMILA'], 'alonso'));
 //! =======================================================================================================================================================
 
 /**
  *? EJERCICIO 16: Crear una función que reciba 2 (dos) parámetros: un arreglo de números y número. La función debe retornar la posición de ese valor en el arreglo
  */
 
-function devolverPosicion(numeros = [], numero) {}
+function devolverPosicion(numeros = [], numero) {
+
+  for (let i = 0; i < numeros.length; i++) {
+    
+    if (numeros[i] === numero) {
+      console.log(`la posición es ${i}`);
+    }
+    
+  }
+}
+
+//devolverPosicion([1,2,3,4,5,6,7,8], 3);
 //! =======================================================================================================================================================
 
 /**
@@ -402,7 +434,13 @@ function devolverPosicion(numeros = [], numero) {}
  *? dentro de los sectores de E-Contact. Caso contrario, retornar False
  */
 
-function verificarSector(econtact = {}, sector) {}
+function verificarSector(econtact = {}, sector) {
+   
+  console.log(econtact.datos.sectores.includes(sector)); 
+  
+}
+//verificarSector(objetoFijo, 'Contabilidad');
+
 //! =======================================================================================================================================================
 
 /**
@@ -410,7 +448,21 @@ function verificarSector(econtact = {}, sector) {}
  *? La función debe retornar la cantidad de sedes que tengan una cantidad de empleados menor a la cantidad establecida como segundo parámetro.
  */
 
-function verificarCantidadEmpleados(econtact = {}, cantidad) {}
+function verificarCantidadEmpleados(econtact = {}, cantidad) {
+  const sedes = econtact.datos.sedes;
+  let contador = 0;
+
+  for (const valor in sedes) {
+    if (sedes[valor].empleados < cantidad) {
+      contador++;
+    }    
+  }
+
+  console.log(`La cantidad de sedes con empleados menores a la cifra ingresada como segundo parametro es: ${contador}`);
+  
+}
+
+//verificarCantidadEmpleados(objetoFijo, 30);
 //! =======================================================================================================================================================
 
 /**
@@ -421,7 +473,16 @@ function verificarCantidadEmpleados(econtact = {}, cantidad) {}
  *?
  */
 
-function verificarClave(objeto = {}, clave) {}
+function verificarClave(objeto = {}, clave) {
+  const alumno = objeto;
+
+  for (const key in alumno) {
+    return (Object.hasOwnProperty.call(alumno, clave)) ? true : false;
+  }
+  
+}
+
+//console.log(verificarClave({nombre: 'Juan', edad: 35, profesion: 'programador'}, 'altura'));
 //! =======================================================================================================================================================
 
 /**
@@ -429,4 +490,10 @@ function verificarClave(objeto = {}, clave) {}
  *? Recordatorio: al inicio hay un arreglo de numeros reales como ejemplo.
  */
 
-function quitarParteDecimal(arregloNumerosReales = []) {}
+function quitarParteDecimal(arregloNumerosReales = []) {
+  
+  const numerosEnteros = arregloNumerosReales.map(valor => Math.trunc(valor));
+  console.log(numerosEnteros);
+}
+
+//quitarParteDecimal(numerosReales)
